@@ -58,7 +58,7 @@ Continue working with Javascript for DOM manipulation.
 
 ## Author
 
-- Frontend Mentor - [@yd8701a](https://www.frontendmentor.io/profile/d8701a)
+- Frontend Mentor - [@d8701a](https://www.frontendmentor.io/profile/d8701a)
 
 
 
