@@ -1,0 +1,284 @@
+
+/* Content:
+
+1. General CSS reset
+2. Custom variables
+3. Cause 1rem to equal 10px for easy math.
+4. Core body defaults
+5. wrapper__main styles
+6. wrapper__thanks styles
+7. Media queries
+8. Attribution */
+
+/* 1. General CSS reset */ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    list-style: none;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 2. Custom variables */
+
+:root {
+    --font-family: 'Roboto', sans-serif;
+   
+    --primary-font-color: hsl(4, 100%, 67%);
+    --neutral-font-color1: hsl(234, 29%, 20%);
+    --neutral-font-color2:  hsl(235, 18%, 26%);
+    --neutral-font-color3: hsl(231, 7%, 60%);
+    --neutral-font-color4: hsl(0, 0%, 100%);
+}
+
+/* 3. Cause 1rem to equal 10px for easy math. */
+html { 
+    font-size: 62.5%;
+}
+
+/* 4. Core body defaults */
+body {
+    height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    font-size: clamp(16px, 4vw, 24px);
+    font-family: var(--font-family);
+    background-color: var(--neutral-font-color2);
+}
+
+/* 5. wrapper__main styles */
+
+.wrapper__main, .wrapper__thanks {
+    width: clamp(320px, 100vw, 1440px);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: var(--neutral-font-color4);
+}
+
+.wrapper__images img {
+    width: 100%;
+    object-fit: cover;
+} 
+
+.wrapper__content {
+    display: flex;
+    flex-direction: column;
+    margin-block-start: 2rem;
+    margin-block-end: 2rem;
+    margin-inline: 2.5rem;
+}
+
+.content__heading {
+    margin-block-end: 3.5rem;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: flex; 
+    align-items: center; 
+    padding-block-start: 2rem;
+}
+
+li svg {
+    margin-right: 1.6rem;
+    display: inline-block;
+    flex-shrink: 0;
+    overflow: visible;
+}
+
+.content__form {
+    margin-block: 3.5rem;
+    position: relative;
+}
+
+.content__form label {
+    display: block;
+    padding-block: 1rem;
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    font-weight: 600;
+}
+
+.content__form input[type="email"] {
+    display: block;
+    width: 100%;
+    padding: 1.3rem;
+    margin-block-end: 10px;
+    border-radius: .9rem;
+    box-shadow: none;
+    cursor: unset;
+}
+
+.error {
+    font-size: 1rem;
+    font-weight: 600;
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    color: var(--primary-font-color);
+}
+
+.error-class {
+    background-color: rgba(239, 17, 17, 0.184);
+    color: var(--primary-font-color);
+    font-weight: 600;
+}
+
+.btn-submit {
+    display: block;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--neutral-font-color4);
+    background-color: var(--neutral-font-color1);
+    width: 100%;
+    margin-block: 2.5rem;
+    padding: 1.5rem;
+    border: none;
+    border-radius: .9rem;
+    transition: background-color .9s;
+}
+
+.btn-submit:active {
+    background-color: red;
+    color: black;
+}
+
+.btn-submit:hover {
+    color: white;
+    background-color: var(--primary-font-color);
+}
+
+.hidden {
+    display: none;
+}
+
+/* 6. wrapper__thanks styles */
+
+.wrapper__logo {
+    margin-block-start: 14.5rem;
+    margin-inline-start: 2.5rem;
+}
+
+#emailsubmit {
+    font-weight: 600;
+}
+
+.btn-dismiss {
+   margin-block-start: 27rem;
+}
+
+/* 7. Media queries */
+
+
+@media (width > 992px) {
+    .wrapper__main {
+        width: 930px;
+        display: grid;
+        grid-template-rows: 640px;
+        margin: 120px auto;
+        border-radius: 5rem;
+    }
+
+    .wrapper__images img {
+        max-width: 100%;
+        object-fit: cover;
+    }  
+
+   .wrapper__images {
+        grid-column: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-inline: 2rem;
+   }
+
+   .image-mobile {
+        display: none;
+   }
+
+   img.image-desktop {
+        display: block;
+   }
+       
+    .wrapper__content {
+        grid-column: 1;
+        grid-row: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-inline: 5rem;
+        margin-block-start: 10rem;
+    }
+
+    .content__heading {
+        margin-block-end: 1.5rem;
+    }
+
+    .content__text, li p, .content__form input[type="email"], .btn-submit {
+        font-size: 16px;
+    }
+
+    .content__text {
+        margin-block-end: 1.5rem;
+    }
+
+    li {
+       padding-block-start: 1rem;
+    }
+
+    .content__form label {
+        font-size: clamp(1rem, 3vw, 1.2rem);
+    }
+
+   .wrapper__thanks {
+        margin: 120px auto;
+        width: clamp(500px, 30vw, 550px);
+        border-radius: 5rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .wrapper__thanks .wrapper__logo {
+        margin-block-start: 5rem;
+        margin-inline-start: 4rem;
+    }
+
+    .wrapper__thanks .wrapper__content {
+        margin-block-start: 1rem;
+        margin-block-end: .5rem;
+    }
+
+    .btn-dismiss {
+        margin-block-start: 1.5rem;
+     }
+
+    /* 8. Attribution */
+
+    .attribution { 
+        font-size: 11px; 
+        text-align: center; 
+    }
+
+    .attribution a { 
+        color: hsl(228, 45%, 44%); 
+    }
+      
+}

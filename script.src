@@ -1,0 +1,31 @@
+const submitBtn = document.querySelector(".btn-submit");
+const dismissBtn = document.querySelector(".btn-dismiss");
+const regex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+const emailInput = document.querySelector("#email");
+const wrapperMain = document.querySelector(".wrapper__main");
+const wrapperThanks = document.querySelector(".wrapper__thanks");
+const paragraph = document.querySelector(".error");
+const emailSubmit = document.querySelector("#emailsubmit");
+
+
+submitBtn.addEventListener("click", function(e) {
+
+     
+   if (regex.test(emailInput.value)) {
+     e.preventDefault();
+     wrapperMain.classList.add("hidden");
+     wrapperThanks.classList.remove("hidden");
+     emailSubmit.textContent = emailInput.value + ".";
+    }
+
+     else {
+     paragraph.classList.remove("hidden");
+     emailInput.classList.add("error-class")
+     return false
+   }
+
+})
+
+
+
+

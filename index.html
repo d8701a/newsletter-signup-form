@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+
+</head>
+<body>
+  <section class="wrapper__main">
+    <div class="wrapper__images">
+      <img src="/assets/images/illustration-sign-up-mobile.svg" alt="Illustration of a mobile sign up action" class="image-mobile">
+
+      <img src="/assets/images/illustration-sign-up-desktop.svg" alt="Illustration of a mobile sign up action" class="image-desktop hidden">
+    </div>
+    
+    <div class="wrapper__content">
+      <h1 class="content__heading">Stay updated!</h1>
+      <p class="content__text">Join 60,000+ product managers receiving monthly updates on:</p>
+      <ul>
+        <li> 
+ 
+          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+            <g fill="none">
+              <circle cx="10.5" cy="10.5" r="10.5" fill="#FF6155" />
+              <path stroke="#FFF" stroke-width="2" d="M6 11.381 8.735 14 15 8" />
+            </g>
+          </svg>
+
+          <p>Product discovery and building what matters</p>
+        </li>
+        <li>
+          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+            <g fill="none">
+              <circle cx="10.5" cy="10.5" r="10.5" fill="#FF6155" />
+              <path stroke="#FFF" stroke-width="2" d="M6 11.381 8.735 14 15 8" />
+            </g>
+          </svg>
+          <p>Measuring to ensure updates are a success</p>
+        </li>
+        <li>
+          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+            <g fill="none">
+              <circle cx="10.5" cy="10.5" r="10.5" fill="#FF6155" />
+              <path stroke="#FFF" stroke-width="2" d="M6 11.381 8.735 14 15 8" />
+            </g>
+          </svg>
+          <p>And much more!</p>
+        </li>
+      </ul>
+
+      <form class="content__form">
+          
+        <label for="email">Email address:</label>
+        <p class="error hidden">Valid email required</p>
+        <input type="email" id="email" name="email" placeholder="email@company.com" required>
+        <button type="submit" class="btn-submit">Subscribe to monthly newsletter</button>
+      </form>
+    
+ 
+    </div>
+     
+  </section>
+
+  <section class="wrapper__thanks hidden">
+    <div class="wrapper__logo">
+      <img src="/assets/images/icon-success.svg" alt="Icon checked">
+    </div>
+    <div class="wrapper__content">
+      <h1 class="content__heading">Thanks for subscribing!</h1>
+      <p class="content__text">A confirmation email has been sent to <span id="emailsubmit">.</span>
+        Please open it and click the button inside to confirm your subscription.</p>
+      <form class="content__form content__form-submit">
+        <button type="submit" class="btn-submit btn-dismiss">Dismiss message</button>
+      </form>
+    </div>
+  </section>
+
+  
+<div class="attribution">
+  Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+  Coded by <a href="#">Dina</a>.
+</div>
+
+  <script src="script.src"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
